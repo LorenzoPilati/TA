@@ -1,4 +1,4 @@
-class Endereco{
+class Endereco {
 
     _rua : string;
     _numero : number;

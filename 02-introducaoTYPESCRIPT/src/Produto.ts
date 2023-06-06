@@ -4,6 +4,13 @@ export class Produto {
     _descricao : string;
     _valor : number;
 
+
+    public constructor(codigo : number, descricao : string, valor : number){
+        this._codigo = codigo;
+        this._descricao = descricao;
+        this._valor = valor;
+    }
+
     
     public get codigo() : number {
         return this._codigo;

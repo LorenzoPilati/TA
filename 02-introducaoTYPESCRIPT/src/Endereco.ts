@@ -5,6 +5,14 @@ export class Endereco {
     _cidade : string;
     _estado : string;
 
+
+    public constructor(rua : string, numero : number, cidade : string, estado : string){
+        this._rua = rua;
+        this._numero = numero;
+        this._cidade = cidade;
+        this._estado = estado;
+    }
+
     
     public get rua() : string {
         return this._rua;

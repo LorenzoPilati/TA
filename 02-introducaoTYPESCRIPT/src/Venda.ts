@@ -8,6 +8,14 @@ export class Venda {
     _produto : Produto[];
 
 
+    public constructor(codigo : number, data : number, cliente : Cliente, produto : Produto[]){
+        this._codigo = codigo;
+        this._data = data;
+        this._cliente = cliente;
+        this._produto = produto
+    }
+
+
     public get codigo() : number {
         return this._codigo;
     }
@@ -41,5 +49,15 @@ export class Venda {
 
     public set produto(produto : Produto[]) {
         this._produto = produto;
+    }
+
+
+    calcularTotal() : number {
+        var soma : number = 0;
+        
+        for (const produto of this._produto)
+            soma += produto.valor;
+        
+        return soma;
     }
 }

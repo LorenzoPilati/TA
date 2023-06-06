@@ -10,6 +10,16 @@ export class Cliente {
     _telefones : Telefone[];
 
 
+    constructor(nome : string, cpf : number, dataNascimento : number, genero : string, endereco : Endereco, telefones: Telefone[]){
+        this._nome = nome;
+        this._cpf = cpf;
+        this._dataNascimento = dataNascimento;
+        this._genero = genero;
+        this._endereco = endereco;
+        this._telefones = telefones;
+    }
+
+
     public get nome() : string {
         return this._nome;
     }

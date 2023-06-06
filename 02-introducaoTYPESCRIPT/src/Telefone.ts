@@ -5,6 +5,13 @@ export class Telefone {
     _tipo : string;
 
 
+    public constructor(ddd : string, numero : number, tipo : string){
+        this._ddd = ddd;
+        this._numero = numero;
+        this._tipo = tipo;
+    }
+
+
     public get ddd() : string {
         return this._ddd;
     }

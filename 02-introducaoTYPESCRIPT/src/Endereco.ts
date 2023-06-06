@@ -1,4 +1,4 @@
-class Endereco {
+export class Endereco {
 
     _rua : string;
     _numero : number;

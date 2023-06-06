@@ -1,6 +1,6 @@
-import "./Endereco"
-import "./Telefone"
-class Cliente {
+import {Endereco} from "./Endereco"
+import {Telefone} from "./Telefone"
+export class Cliente {
 
     _nome : string;
     _cpf : number;

@@ -1,4 +1,4 @@
-class Telefone {
+export class Telefone {
     
     _ddd : string;
     _numero : number;

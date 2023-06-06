@@ -1,4 +1,4 @@
-class Produto {
+export class Produto {
 
     _codigo : number;
     _descricao : string;

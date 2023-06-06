@@ -2,12 +2,12 @@ import {Endereco} from "./Endereco"
 import {Telefone} from "./Telefone"
 export class Cliente {
 
-    _nome : string;
-    _cpf : number;
-    _dataNascimento : number;
-    _genero : string;
-    _endereco : Endereco;
-    _telefones : Telefone[];
+    private _nome : string;
+    private _cpf : number;
+    private _dataNascimento : number;
+    private _genero : string;
+    private _endereco : Endereco;
+    private _telefones : Telefone[];
 
 
     constructor(nome : string, cpf : number, dataNascimento : number, genero : string, endereco : Endereco, telefones: Telefone[]){

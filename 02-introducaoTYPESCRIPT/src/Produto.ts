@@ -1,8 +1,8 @@
 export class Produto {
 
-    _codigo : number;
-    _descricao : string;
-    _valor : number;
+    private _codigo : number;
+    private _descricao : string;
+    private _valor : number;
 
 
     public constructor(codigo : number, descricao : string, valor : number){

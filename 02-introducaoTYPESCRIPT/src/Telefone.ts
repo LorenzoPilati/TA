@@ -1,8 +1,8 @@
 export class Telefone {
     
-    _ddd : string;
-    _numero : number;
-    _tipo : string;
+    private _ddd : string;
+    private _numero : number;
+    private _tipo : string;
 
 
     public constructor(ddd : string, numero : number, tipo : string){

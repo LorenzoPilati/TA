@@ -1,9 +1,9 @@
 export class Endereco {
 
-    _rua : string;
-    _numero : number;
-    _cidade : string;
-    _estado : string;
+    private _rua : string;
+    private _numero : number;
+    private _cidade : string;
+    private _estado : string;
 
 
     public constructor(rua : string, numero : number, cidade : string, estado : string){

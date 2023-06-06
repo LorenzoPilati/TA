@@ -2,10 +2,10 @@ import {Cliente} from "./Cliente";
 import {Produto} from "./Produto";
 export class Venda {
 
-    _codigo : number;
-    _data : number;
-    _cliente : Cliente;
-    _produto : Produto[];
+    private _codigo : number;
+    private _data : number;
+    private _cliente : Cliente;
+    private _produto : Produto[];
 
 
     public constructor(codigo : number, data : number, cliente : Cliente, produto : Produto[]){

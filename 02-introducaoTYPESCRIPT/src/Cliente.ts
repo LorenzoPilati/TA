@@ -1,3 +1,5 @@
+import "./Endereco"
+import "./Telefone"
 class Cliente {
 
     _nome : string;

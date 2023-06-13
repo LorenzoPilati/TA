@@ -1,10 +1,10 @@
 import Location from "./Location";
 import Movie from "./item/Movie";
-import Item from "./item/interface/IItem";
+import IItem from "./item/interface/IItem";
 
 export default class MovieLocation extends Location{
     
-    protected createItem(): Item {
+    protected createItem(): IItem {
         return new Movie();
     }
     

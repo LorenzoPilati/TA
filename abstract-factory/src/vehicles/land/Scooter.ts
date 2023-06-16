@@ -1,0 +1,13 @@
+import ILandVehicle from "./interfaces/ILandVehicle";
+
+export default class Scooter implements ILandVehicle{
+    
+    startRoute(): void {
+        this.getCargo();
+        console.log("Patinete: Iniciando Trajeto...");
+    }
+
+    getCargo(): void {
+        console.log("Patinete: Passageiro embarcado");
+    }
+}

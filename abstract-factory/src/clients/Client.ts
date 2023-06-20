@@ -6,9 +6,9 @@ export default class Client{
     private vehicle: ILandVehicle;
     private aircraft: IAircraft;
 
-    constructor(factory: ITransportFactory){
-        this.vehicle = factory.createTransportVehicle();
-        this.aircraft = factory.createTransportAircraft();
+    constructor(factory: ITransportFactory, landVehicle: string, airVehicle: string){
+        this.vehicle = factory.createTransportVehicle(landVehicle);
+        this.aircraft = factory.createTransportAircraft(airVehicle);
     }
 
     startRoute(){

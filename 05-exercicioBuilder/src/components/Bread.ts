@@ -1,0 +1,8 @@
+enum Bread{
+    ITALIANO_BRANCO = "ITALIANO_BRANCO",
+    NOVE_GRAOS = "NOVE_GRAOS",
+    TRES_QUEIJOS = "TRES_QUIJOS",
+    PARMESAO_E_OREGANO = "PARMESAO_E_OREGANO"
+}
+
+export default Bread;

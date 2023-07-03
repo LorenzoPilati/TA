@@ -1,7 +1,7 @@
 import MercadoPagoAdapter from "./adapters/MercadoPagoAdapter";
 import PayonnerAdapter from "./adapters/PayonnerAdapter";
 import MercadoPago from "./mercadoPago/MercadoPago";
-import Payonner from "./payooner/Payonner";
+import Payonner from "./payonner/Payonner";
 import IPayPalPayment from "./paypal/IPayPalPayment";
 import PayPal from "./paypal/PayPal";
 

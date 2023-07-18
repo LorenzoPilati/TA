@@ -2,7 +2,11 @@ export default abstract class Middleware{
     public next: Middleware;
     
     public linkWith(next: Middleware): Middleware{
-        this.next = next;
+        if(this.next == null){
+            this.next = next;
+        }else{
+            this.next.linkWith(next);
+        }
         return next;
     }
 

@@ -1,7 +1,8 @@
 import CheckPermissionMiddleware from "./middleware/CheckPermissionMiddleware";
-import CheckUserMiddleware from "./middleware/CheckUserMiddleware";
+import CheckEmailMiddleware from "./middleware/CheckEmailMiddleware";
 import Server from "./server/Server";
 import * as readline from "readline";
+import CheckPasswordMiddleware from "./middleware/CheckPasswordMiddleware";
 
 declare var process;
 const server = new Server();
@@ -22,7 +23,8 @@ function setPromptQuestion(){
     rl.on("close", () => setPromptQuestion());
 }
 
-const middleware = new CheckUserMiddleware();
+const middleware = new CheckEmailMiddleware();
+middleware.linkWith(new CheckPasswordMiddleware());
 middleware.linkWith(new CheckPermissionMiddleware());
 server.setMiddleware(middleware);
 setPromptQuestion();

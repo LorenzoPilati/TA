@@ -4,8 +4,32 @@ import MinhaBibliotecaProxy from "./minhaBibilioteca/MinhaBibliotecaProxy";
 
 const minhaBibliotecaProxy: IMinhaBiblioteca = new MinhaBibliotecaProxy(new MinhaBiblioteca);
 
-minhaBibliotecaProxy.meusLivros();
-minhaBibliotecaProxy.livro(1);
-minhaBibliotecaProxy.livro(2);
-minhaBibliotecaProxy.dowloadLivro(1);
-minhaBibliotecaProxy.livro(2);
+let id: number = 1;
+
+console.log("Meus Livros:")
+minhaBibliotecaProxy.meusLivros().forEach(livro => {
+    console.log(livro)
+});
+console.log();
+
+console.log("Meus Livros:")
+minhaBibliotecaProxy.meusLivros().forEach(livro => {
+    console.log(livro)
+});
+console.log();
+
+console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(id));
+console.log();
+
+console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(id));
+console.log();
+
+id = 2;
+
+console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(id));
+console.log();
+
+id = 3
+
+console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(id));
+console.log();

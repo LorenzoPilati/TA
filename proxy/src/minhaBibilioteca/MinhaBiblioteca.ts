@@ -5,16 +5,13 @@ export default class MinhaBiblioteca implements IMinhaBiblioteca{
 
     meusLivros(): Livros[] {
         let livros: Livros[] = Object.values(Livros);
+        console.log("Puxando da Api...");
         return livros;
     }
 
     livro(id: number): Livros{
         let livros: Livros[] = Object.values(Livros);
-        return livros[id-1];
-    }
-
-    dowloadLivro(id: number): Livros{
-        let livros: Livros[] = Object.values(Livros);
+        console.log("Puxando da Api...");
         return livros[id-1];
     }
 }

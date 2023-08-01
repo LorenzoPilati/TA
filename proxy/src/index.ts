@@ -18,18 +18,13 @@ minhaBibliotecaProxy.meusLivros().forEach(livro => {
 });
 console.log();
 
-console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(id));
+console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(1));
+console.log();
+console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(1));
 console.log();
 
-console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(id));
+console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(2));
 console.log();
 
-id = 2;
-
-console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(id));
-console.log();
-
-id = 3
-
-console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(id));
+console.log("Livro Selecionada: " + minhaBibliotecaProxy.livro(3));
 console.log();

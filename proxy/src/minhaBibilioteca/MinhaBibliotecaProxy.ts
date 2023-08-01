@@ -4,7 +4,6 @@ import IMinhaBiblioteca from "./IMinhaBiblioteca";
 export default class MinhaBibliotecaProxy implements IMinhaBiblioteca{
     private service: IMinhaBiblioteca;
     private idCache: number;
-    private isDowload: boolean;
     private listaLivros: Livros[];
     private livroCache: Livros;
 

@@ -4,8 +4,6 @@ import MinhaBibliotecaProxy from "./minhaBibilioteca/MinhaBibliotecaProxy";
 
 const minhaBibliotecaProxy: IMinhaBiblioteca = new MinhaBibliotecaProxy(new MinhaBiblioteca);
 
-let id: number = 1;
-
 console.log("Meus Livros:")
 minhaBibliotecaProxy.meusLivros().forEach(livro => {
     console.log(livro)

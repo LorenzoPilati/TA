@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import Contato from 'src/app/model/entities/Contatos';
+import { ContatoService } from 'src/app/model/services/contato.service';
 
 @Component({
   selector: 'app-home',
@@ -12,31 +13,11 @@ export class HomePage {
   public telefone!: number;
   public lista_contatos: Contato[] = [];
 
-  constructor(private alertController: AlertController) {
-    let c1: Contato = new Contato("Lorenzo Pilati", 984050998);
-    let c2: Contato = new Contato("Alberto Pilati", 999999223);
-    let c3: Contato = new Contato("Pedro Pilati", 929299299);
-    this.lista_contatos.push(c1);
-    this.lista_contatos.push(c2);
-    this.lista_contatos.push(c3);
+  constructor(private router: Router, private contatoService : ContatoService) {
+    this.lista_contatos = this.contatoService.obterTodos();
   }
 
-  cadastrar(){
-    if(this.nome && this.telefone){
-      this.lista_contatos.push(new Contato(this.nome, this.telefone));
-      this.presentAlert("Sucesso", "Contato Salvo!");
-    }else{
-      this.presentAlert("Erro", "Campos Obrigatorios");
-    }
-  }
-
-  async presentAlert(subHeader : string, message : string) {
-    const alert = await this.alertController.create({
-      header: 'Agenda de Contados',
-      subHeader: subHeader,
-      message: message,
-      buttons: ['OK'],
-    });
-    await alert.present();
+  irParaCadastrar(){
+    this.router.navigate(["/cadastrar"]);
   }
 }

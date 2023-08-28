@@ -27,4 +27,12 @@ export class ContatoService {
   obterPorIndice(indice : number) : Contato{
     return this.lista_contatos[indice];
   }
+
+  editar(indice: number, contato: Contato){
+    this.lista_contatos[indice] = contato;
+  }
+
+  excluir(indice: number){
+    this.lista_contatos.splice(indice, 1);
+  }
 }

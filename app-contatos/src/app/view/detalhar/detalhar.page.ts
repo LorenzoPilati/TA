@@ -17,6 +17,7 @@ export class DetalharPage implements OnInit {
   public nome: string;
   public telefone: number;
   public email: string;
+  public edicao: boolean = true;
 
   constructor(private alertController: AlertController,  private router: Router, private actRoute: ActivatedRoute, private contatoService: ContatoService) { }
 
@@ -34,11 +35,11 @@ export class DetalharPage implements OnInit {
   
   editar(){
     if(this.nome && this.telefone){
-      let novo : Contato = new Contato(this.nome, this.telefone);
+      let novo: Contato = new Contato(this.nome, this.telefone);
       novo.email = this.email;
-      this.contatoService.cadastrar(novo);
-      this.presentAlert("Sucesso", "Contato Salvo!");
-      this.router.navigate(["/home"]);
+      this.contatoService.editar(this.indice, novo);
+      this.presentAlert("Sucesso","Contato Salvo!");
+      this.router.navigate(['/home']);
     }else{
       this.presentAlert("Erro", "Campos Obrigatorios");
     }
@@ -52,6 +53,41 @@ export class DetalharPage implements OnInit {
       buttons: ['OK'],
     });
     await alert.present();
+  }
+
+  async confirmAlert(){
+    const alert = await this.alertController.create({
+      header: 'Agenda de Contados',
+      subHeader: 'ATENÇÃO',
+      message: 'Deseja mesmo excluir o contato?',
+      buttons: [{
+        text: 'Cancel',
+        role: 'cancel'
+      },
+      {
+        text: 'EXCLUIR',
+        role: 'exlcuir',
+        cssClass: 'ion-color-danger',
+        handler: () => {
+          this.excluir();
+        }
+      }
+      ],
+    });
+    await alert.present();
+  }
+
+  habilitar(){
+    if(this.edicao){
+      this.edicao = false;
+    }else{
+      this.edicao = true;
+    }
+  }
+
+  excluir(){
+    this.contatoService.excluir(this.indice);
+    this.router.navigate(['/home']);
   }
 
   voltar(){

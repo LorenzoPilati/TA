@@ -1,4 +1,5 @@
 export default class Contato{
+    private _id: string;
     private _nome: string;
     private _telefone: number;
     private _email! : string;
@@ -6,6 +7,14 @@ export default class Contato{
     constructor(nome: string, telefone: number){
         this._nome = nome;
         this._telefone = telefone;
+    }
+
+    get id(): string{
+        return this._id;
+    }
+
+    set id(id: string){
+        this._id = id;
     }
 
     get nome(): string{

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import Contato from 'src/app/model/entities/Contatos';
-import { ContatoService } from 'src/app/model/services/contato.service';
+import { FirebaseService } from 'src/app/model/service/firebase.service';
 
 @Component({
   selector: 'app-detalhar',
@@ -12,22 +12,16 @@ import { ContatoService } from 'src/app/model/services/contato.service';
 export class DetalharPage implements OnInit {
 
   contato: Contato;
-  indice: number
 
   public nome: string;
   public telefone: number;
   public email: string;
   public edicao: boolean = true;
 
-  constructor(private alertController: AlertController,  private router: Router, private actRoute: ActivatedRoute, private contatoService: ContatoService) { }
+  constructor(private alertController: AlertController,  private router: Router, private firebase: FirebaseService) { }
 
   ngOnInit() {
-    this.actRoute.params.subscribe((parametros) => {
-      if(parametros["indice"]){
-        this.indice = parametros["indice"];
-        this.contato = this.contatoService.obterPorIndice(this.indice);
-      }
-    });
+    this.contato = history.state.contato;
     this.nome = this.contato.nome ;
     this.telefone = this.contato.telefone;
     this.email = this.contato.email;
@@ -37,7 +31,8 @@ export class DetalharPage implements OnInit {
     if(this.nome && this.telefone){
       let novo: Contato = new Contato(this.nome, this.telefone);
       novo.email = this.email;
-      this.contatoService.editar(this.indice, novo);
+      this.firebase.update(novo, this.contato.id);
+
       this.presentAlert("Sucesso","Contato Salvo!");
       this.router.navigate(['/home']);
     }else{
@@ -86,7 +81,7 @@ export class DetalharPage implements OnInit {
   }
 
   excluir(){
-    this.contatoService.excluir(this.indice);
+    this.firebase.delete(this.contato);
     this.router.navigate(['/home']);
   }
 
